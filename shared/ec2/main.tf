@@ -162,34 +162,6 @@ module "private" {
       source_security_group_id = module.public.security_group_id
       description              = "Healthcheck"
     },
-    {
-      from_port                = 3000
-      protocol                 = "tcp"
-      to_port                  = 3000
-      source_security_group_id = module.local.security_group_id
-      description              = "ALB through local"
-    },
-    {
-      from_port                = 3000
-      protocol                 = "tcp"
-      to_port                  = 3000
-      source_security_group_id = module.public.security_group_id
-      description              = "ALB through public"
-    },
-    {
-      from_port                = 9000
-      protocol                 = "tcp"
-      to_port                  = 9000
-      source_security_group_id = module.local.security_group_id
-      description              = "ALB through local"
-    },
-    {
-      from_port                = 9000
-      protocol                 = "tcp"
-      to_port                  = 9000
-      source_security_group_id = module.public.security_group_id
-      description              = "ALB through public"
-    },
   ]
   egress_with_cidr_blocks = [
     {
